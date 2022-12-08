@@ -12,11 +12,12 @@ const colorList = [
 ];
 
 let addColorBtn = () => {
-  let content = ``;
+  let content = "";
   colorList.forEach((color) => {
     content += `
-            <button class="color-button ${color}" onclick="changeHouseColor(${color})"></button>    
+            <button class="color-button ${color}" onclick="changeHouseColor('${color}')" ></button>    
         `;
+    // console.log(color);
   });
   document.getElementById("colorContainer").innerHTML = content;
 };
@@ -24,5 +25,5 @@ let addColorBtn = () => {
 addColorBtn();
 
 let changeHouseColor = (color) => {
-  document.getElementById("house").classList.toggle("active");
+  document.getElementById("house").className = `house ${color}`;
 };
